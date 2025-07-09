@@ -2,16 +2,23 @@ class Main
 {
 	public static void main(String[] args)
 	{
-		String s=new String("371");
-		int size=s.length();
-		int a=Integer.parseInt(s);
-		int sum=0;
-		int n=a;
+		int n=371,c=0,rem=0,rev=1,sum=0,n1=n;
 		while(n!=0)
 		{
-			sum+=(int)(Math.pow((n%10),size));
+			c++;
 			n/=10;
 		}
-		System.out.println((a==sum)?"amstrong "+sum:"not amstrong "+sum);
+		n=n1;
+		while(n!=0)
+		{
+			rem=n%10;
+			sum+=(int)(Math.pow(rem,c));
+			n/=10;
+		}
+		System.out.println(sum);
+		if(sum==n1)
+			System.out.println("amstromg");
+		else
+			System.out.println("not amstrong");
 	}
 }
